@@ -33,21 +33,21 @@ function RecipeList({ recipes, deleteRecipe }) {
 'td' JSX 'elements'. The first, second, fourth and fifth 'td' JSX 'elements' 
 contain 'p' JSX 'elements' inside. The third 'td' JSX 'element' contains a 
 'img' JSX 'element' with the 'value' of the current item in the "recipes" 
-'parameter's' ('array') "photo" 'key' and the value, "A photo of" and the 'value'
- of the current item in the "recipes" 'parameter's' ('array') "name" 'key' as 
- the 'value' for its 'alt' 'attribute'. The sixth 'td' JSX 'element' contains 
- a 'button' JSX 'element' with the 'value' of "button" for its 'role' 
- 'attribute', the 'value' of "delete" for its 'name' 'attribute', the 'text' 
- "Delete" and the "getIndexToDelete" 'function' as the 'value' for its 'onChange'
-  'event listener'. The first 'p' JSX 'element' inside of the first 'td'
-   JSX 'element' contains the 'value' of the current item's "name" 'key' for its
-   'text'. The second 'p' JSX 'element' inside of the second 'td' JSX 
-   'element' contains the 'value' of the current item's "cuisine" 'key' for its 
-   'text'. The fourth 'p' JSX 'element' inside of the fourth 'td' JSX 'element' 
-   contains the 'value' of the current item's "ingredients" 'key' for its 'text'. 
-   The fifth 'p' JSX 'element' inside of the fifth 'td' JSX 'element' contains 
-   the 'value' of the current item's "preparation" 'key' for its 'text'. */
-    const createRecipeTableData = recipes.map((recipe, index) => <tr key={index}><td><p>{recipe.name}</p></td><td><p>{recipe.cuisine}</p></td><td><img src={recipe.photo} alt={`A photo of ${recipe.name}.`} /></td><td><p>{recipe.ingredients}</p></td><td><p>{recipe.preparation}</p></td><td><button type="button" name="delete" onClick={getIndexToDelete} value={index} >Delete</button></td> </tr>)
+'parameter's' ('array') "photo" 'key' and the value, the current item in the 
+"recipes" 'parameter's' ('array') "name" 'key' as the 'value' for its 'alt' 
+'attribute'. The sixth 'td' JSX 'element' contains a 'button' JSX 'element' with
+ the 'value' of "button" for its 'role' 'attribute', the 'value' of "delete" for 
+ its 'name' 'attribute', the 'text' "Delete" and the "getIndexToDelete" 'function'
+  as the 'value' for its 'onChange' 'event listener'. The first 'p' JSX 'element'
+   inside of the first 'td' JSX 'element' contains the 'value' of the current 
+   item's "name" 'key' for its 'text'. The second 'p' JSX 'element' inside of the
+    second 'td' JSX 'element' contains the 'value' of the current item's "cuisine"
+     'key' for its 'text'. The fourth 'p' JSX 'element' inside of the fourth 'td'
+      JSX 'element' contains the 'value' of the current item's "ingredients" 'key'
+       for its 'text'. The fifth 'p' JSX 'element' inside of the fifth 'td' JSX 
+       'element' contains the 'value' of the current item's "preparation" 'key' for
+        its 'text'. */
+    const createRecipeTableData = recipes.map((recipe, index) => <tr key={index}><td><p>{recipe.name}</p></td><td><p>{recipe.cuisine}</p></td><td><img src={recipe.photo} alt={recipe.name} /></td><td><p>{recipe.ingredients}</p></td><td><p>{recipe.preparation}</p></td><td><button type="button" name="delete" onClick={getIndexToDelete} value={index} >Delete</button></td> </tr>)
 
   /* A 'div' JSX 'element' with the 'value' of "recipe-list" for its 'className' 
   'attribute' with a 'table' JSX 'element' with one 'tr' inside containing six
