@@ -2,7 +2,7 @@
 * This is the data that is initially loaded.
 * Please do not modify this file.
 */
-
+/* The "RecipeData" 'variable' holds an 'array' with two 'objects' inside. */
 const RecipeData = [
   {
     name: "Tuna Poke with Mango",
@@ -19,5 +19,5 @@ const RecipeData = [
     preparation: "1. Remove the flesh of the avocados. 2. Mash the avocados with the back of a fork. 3. Add the other ingredients and incorporate evenly. 4. Add salt to taste."
   },
 ];
-
+/* 'Exports' the "RecipeData" 'array'. */
 export default RecipeData;
