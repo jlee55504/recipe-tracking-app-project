@@ -1,0 +1,21 @@
+/* 'td' JSX 'elements' 'width' 'properties' 'set' in the "./RecipeCreate.js" file
+ to replicate Chegg Skill's webpage example. */
+ .name-td {
+    width: 9%;
+}
+
+.cuisine-td {
+    width: 12%;
+}
+.photo-td {
+    width: 12%;
+}
+.ingredients-td {
+    width: 27%;
+}
+.preparation-td {
+    width: 43%;
+}
+.submit-btn-td {
+    width: 11.5%;
+}
