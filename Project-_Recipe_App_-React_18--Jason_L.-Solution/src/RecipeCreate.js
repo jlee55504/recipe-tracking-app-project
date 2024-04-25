@@ -13,7 +13,7 @@ import './RecipeCreate.css';
      the "handleSubmit" 'function' 'calls' the "setFormData" 'function' using the 
      "initialFormState" 'object' with the 'rest parameter' to 'update' the "formData" 
      'variable', then 'calls' the "getRecipes" 'parameter/function' (from './App.js') with 
-   the "formData" as its 'argument'. The "styleBackground" 'function' sets the "styling" 
+   the "formData" as its 'argument'. The "styleBackground" 'function' 'sets' the "styling" 
    'variable's' 'value' depending on the "areThereOddNumberRecipes" 'parameter/variable'
      'value'. */
 function RecipeCreate({ getRecipes, areThereOddNumberRecipes }) {
