@@ -1,7 +1,7 @@
-// 'Imports' 'css' 'file' from "./App.css".
-import './App.css';
 // 'Imports' "React" and "useState" 'component' from "react".
 import React, { useState } from "react";
+// 'Imports' 'css' 'file' from "./App.css".
+import './App.css';
 /* 'Imports' "RecipeCreate" from './RecipeCreate'. */
 import RecipeCreate from "./RecipeCreate";
 /* 'Imports' "RecipeList" from './RecipeList'. */
@@ -9,7 +9,7 @@ import RecipeList from "./RecipeList";
 /* 'Imports' "RecipeData" from './RecipeData'. */
 import RecipeData from "./RecipeData"
 
-/*The "App" 'function/component' holds the "recipes" 'variable' and "setRecipes" 
+/* The "App" 'function/component' holds the "recipes" 'variable' and "setRecipes" 
 'function' which holds and 'updates' the 'data' from the "RecipeData" 'variable' 
 and the "getRecipes" 'function'. The "deleteRecipe" 'function' uses the 'filter' 
 'method' 'updates' the "recipes" 'variable/array'. "App" 'function/component' 
