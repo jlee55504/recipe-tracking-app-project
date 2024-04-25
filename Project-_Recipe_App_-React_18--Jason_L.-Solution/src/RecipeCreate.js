@@ -1,18 +1,22 @@
 /* 'Imports' "React" and the 'useState' 'method' from 'react'. */
 import React, { useState } from "react";
+/* 'Imports' the './RecipeCreate.css''file'. */
+import './RecipeCreate.css';
 
-/* The "RecipeCreate" 'function/component' takes one 'parameter'; "getRecipes" 
-(a 'function'), returns six 'td' JSX 'elements' inside a 'tr' JSX 'element' 
-inside a 'tbody' JSX 'element' inside a 'table' JSX 'element' inside a 'form'
- JSX 'element'. Inside the 'td' JSX 'elements' are various 'fields' for 'data'.
-  Based on the 'data' inputted, The "handleChange" 'function' 'calls' the 
-  "setFormData" and 'updates' the "formData" 'variable'. After users 
-  completely fill out the form and click the 'form', the "handleSubmit" 
-  'function' 'calls' the "setFormData" 'function' using the "initialFormState"
-   'object' with the 'rest parameter' to 'update' the "formData" 'variable', 
-   then 'calls' the "getRecipes" 'parameter/function' (from './App.js') with 
-   the "formData" as its 'argument'. */
-function RecipeCreate({ getRecipes }) {
+/* The "RecipeCreate" 'function/component' takes two 'parameters'; "getRecipes" 
+(a 'function') and "areThereOddNumberRecipes" (a 'variable' containing a 'boolean'
+ 'value'), returns six 'td' JSX 'elements' inside a 'tr' JSX 'element' inside a 
+ 'tbody' JSX 'element' inside a 'table' JSX 'element' inside a 'form' JSX 'element'.
+  Inside the 'td' JSX 'elements' are various 'fields' for 'data'. Based on the 'data'
+   inputted, The "handleChange" 'function' 'calls' the "setFormData" and 'updates' the
+    "formData" 'variable'. After users completely fill out the form and click the 'form',
+     the "handleSubmit" 'function' 'calls' the "setFormData" 'function' using the 
+     "initialFormState" 'object' with the 'rest parameter' to 'update' the "formData" 
+     'variable', then 'calls' the "getRecipes" 'parameter/function' (from './App.js') with 
+   the "formData" as its 'argument'. The "styleBackground" 'function' sets the "styling" 
+   'variable's' 'value' depending on the "areThereOddNumberRecipes" 'parameter/variable'
+     'value'. */
+function RecipeCreate({ getRecipes, areThereOddNumberRecipes }) {
 
   // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
   // TODO: Add the required input and textarea form elements.
@@ -61,11 +65,34 @@ function RecipeCreate({ getRecipes }) {
         setFormData({ ...initialFormState });
         getRecipes(formData)
     }
+
+    /* The "styling" 'variable' is 'declared' to hold the 'tr' JSX 'element's' 'backgroundColor'. */
+    let styling;
+
+    /* The "styleBackground" 'function' takes the "areThereOddNumberRecipes" 'parameter/variable' and 
+    sets the "styling" 'variable's' 'value' depending on the "areThereOddNumberRecipes" 'parameter/variable'
+     'value'. */
+    const styleBackground = areThereOddNumberRecipes => {
+      if (areThereOddNumberRecipes) {
+        styling = {
+          backgroundColor: "white",
+        }
+      }
+        else if (!areThereOddNumberRecipes) {
+          styling = {
+            backgroundColor: "#fff0c7",
+          }
+        }
+      
+    }
+
+
   /* A 'form' JSX 'element' with a 'value' of "create" for its 'name' attribute 
   and the "handleSubmit" 'function' for its 'onSubmit' 'event listener' is 
   returned. A 'table' JSX 'element' is inside the 'form' JSX 'element' with a 
   'tbody' JSX 'element' inside the 'table' JSX 'element' and a 'tr' JSX 'element'
-   inside of the 'tbody' JSX 'element'. Six 'td' JSX 'elements' are inside with 
+   inside of the 'tbody' JSX 'element'. The 'tr' JSX 'element's' 'style' 'attribute's'
+    'value' is the "styling" 'variable'. Six 'td' JSX 'elements' are inside with 
    five 'label' JSX 'elements' inside of five 'td' JSX 'elements'. The first 
    'label' JSX 'element' has the 'value' "name" for its 'htmlFor' 'attribute'. 
    Inside the first 'label' JSX 'element' is a 'input' JSX 'element' with the 
@@ -109,27 +136,43 @@ function RecipeCreate({ getRecipes }) {
         'onChange' 'event listener'. The final 'td' JSX 'element' contains a 
         'button' JSX 'element' with "submit" as the 'value' for its 'role' 
         'attribute' and the 'value' "Create" for its 'text'. */
+        
+/*
+<thead>
+            <th className="hidden">Name</th>
+            <th className="hidden">Cuisine</th>
+            <th className="hidden">Photo</th>
+            <th className="ingredients-th hidden">Ingredients</th>
+            <th className="preparation-th hidden">Preparation</th>
+            <th className="hidden">Actions</th>
+        </thead>
+*/
+/* The "styleBackground" ''function' is 'called' with the "areThereOddNumberRecipes" 
+'parameter/variable' as an 'argument'. */
+styleBackground(areThereOddNumberRecipes)
+
   return (
     <form name="create" onSubmit={handleSubmit}>
       <table>
-        <tbody>
-          <tr>
-            <td><label htmlFor="name">
+        
+        <tbody >
+          <tr style={styling}>
+            <td className="name-td"><label htmlFor="name">
                 <input type="text" id="name" name="name" placeholder="Name" required={true} value={formData.name} onChange={handleChange}></input>
                 </label></td>
-            <td><label htmlFor="cuisine">
+            <td className="cuisine-td"><label htmlFor="cuisine">
                 <input type="text" id="cuisine" name="cuisine" placeholder="Cuisine" required={true} value={formData.cuisine} onChange={handleChange}></input>
                 </label></td>
-            <td><label htmlFor="photo">
+            <td className="photo-td"><label htmlFor="photo">
                 <input type="url" id="photo" name="photo" placeholder="URL" required={true} value={formData.photo} onChange={handleChange}></input>
                 </label></td>
-            <td><label htmlFor="ingredients">
-                <textarea id="ingredients" name="ingredients" placeholder="Ingredients" required={true} value={formData.ingredients} onChange={handleChange}></textarea>
+            <td className="ingredients-td"><label htmlFor="ingredients">
+                <textarea id="ingredients" name="ingredients" placeholder="Ingredients" required={true} cols={30} rows={2} value={formData.ingredients} onChange={handleChange}></textarea>
                 </label></td>
-            <td><label htmlFor="preparation">
-                <textarea id="preparation" name="preparation" placeholder="Preparation" required={true} value={formData.preparation} onChange={handleChange}></textarea>
+            <td className="preparation-td"><label htmlFor="preparation">
+                <textarea id="preparation" name="preparation" placeholder="Preparation" required={true} cols={30} rows={2} value={formData.preparation} onChange={handleChange}></textarea>
                 </label></td>
-            <td>
+            <td className="submit-btn-td">
               <button type="submit">Create</button>
             </td>
           </tr>
