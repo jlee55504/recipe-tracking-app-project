@@ -1,7 +1,7 @@
-// 'Imports' "React" and "useState" 'component' from "react".
-import React, { useState } from "react";
 // 'Imports' 'css' 'file' from "./App.css".
 import './App.css';
+// 'Imports' "React" and "useState" 'component' from "react".
+import React, { useState } from "react";
 /* 'Imports' "RecipeCreate" from './RecipeCreate'. */
 import RecipeCreate from "./RecipeCreate";
 /* 'Imports' "RecipeList" from './RecipeList'. */
@@ -9,27 +9,13 @@ import RecipeList from "./RecipeList";
 /* 'Imports' "RecipeData" from './RecipeData'. */
 import RecipeData from "./RecipeData"
 
-/* The "App" 'function/component' holds the "recipes" 'variable' and "setRecipes" 
+/*The "App" 'function/component' holds the "recipes" 'variable' and "setRecipes" 
 'function' which holds and 'updates' the 'data' from the "RecipeData" 'variable' 
 and the "getRecipes" 'function'. The "deleteRecipe" 'function' uses the 'filter' 
 'method' 'updates' the "recipes" 'variable/array'. "App" 'function/component' 
-returns a 'div' JSX 'element', a 'h1' JSX 'element', a 'header' JSX 'element', 
- "RecipeList" 'component' and the "RecipeCreate" 'component'. The 
- "checkIfRecipesAreOdd" 'function' checks if the "recipes" 'variable/array's' 'length'
-      ( the total number of items in the "recipes" 'variable/array') is odd or even 
-      and 'sets' the 'value' for the "areThereOddNumberRecipes" 'variable'.*/
+returns a 'div' JSX 'element', an 'h1' JSX 'element', a 'header' JSX 'element' 
+and the "RecipeCreate" 'component'.*/
 function App() {
-  /* The "areThereOddNumberRecipes" 'variable' is declared and used to tell if 
-  there are an odd number of items in the "recipes" 'variable/array'. */
-  let areThereOddNumberRecipes;
-
-     /* The "checkIfRecipesAreOdd" 'function' checks if the "recipes" 'variable/array's' 'length'
-      ( the total number of items in the "recipes" 'variable/array') is odd or even and 'sets' 
-      the 'value' for the "areThereOddNumberRecipes" 'variable'. */
-     const checkIfRecipesAreOdd = recipes => {
-      if (recipes.length % 2 !== 0) areThereOddNumberRecipes = true;
-      else if (recipes.length % 2 === 0) areThereOddNumberRecipes = false;
-    }
 
   /* The "recipes" 'variable' and "setRecipes" 'function' are declared using the
    'useState' 'method'. The "RecipeData" 'function/component' is 'passed' as an
@@ -66,15 +52,15 @@ function App() {
    for its "getRecipes" 'parameter' and the "areThereOddNumberRecipes" as the 'value' 
    for its "areThereOddNumberRecipes" 'parameter'. */
 
-   /* The "checkIfRecipesAreOdd" 'function' is 'called' with the "recipes" 'variable/array'. */
-   checkIfRecipesAreOdd(recipes);
-
-   console.log(areThereOddNumberRecipes);
+/* Returns a 'div' JSX 'element' with the 'value' of "App" for its 'className' 'attribute'. 
+Inside the 'div' JSX 'element' is a 'header' JSX 'element' with a 'h1' JSX 'element' with the 
+'text', "Delicious Food Recipes" followed by the "RecipeCreate" 'component' with the "recipes" 
+'variable/array' as the 'value' for its "recipes" 'parameter', the "deleteRecipe" 'function' for
+ its "deleteRecipe" 'parameter' and the "getRecipes" 'function' for its "getRecipes" 'parameter'. */  
   return (
     <div className="App">
       <header><h1>Delicious Food Recipes</h1></header>
-      <RecipeList recipes={recipes} deleteRecipe={deleteRecipe} />
-      <RecipeCreate  getRecipes={getRecipes} areThereOddNumberRecipes={areThereOddNumberRecipes} />
+      <RecipeCreate recipes={recipes} deleteRecipe={deleteRecipe}  getRecipes={getRecipes} />
     </div>
   );
 }
