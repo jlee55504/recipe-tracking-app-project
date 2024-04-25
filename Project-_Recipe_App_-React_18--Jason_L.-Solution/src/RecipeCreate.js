@@ -137,16 +137,7 @@ function RecipeCreate({ getRecipes, areThereOddNumberRecipes }) {
         'button' JSX 'element' with "submit" as the 'value' for its 'role' 
         'attribute' and the 'value' "Create" for its 'text'. */
         
-/*
-<thead>
-            <th className="hidden">Name</th>
-            <th className="hidden">Cuisine</th>
-            <th className="hidden">Photo</th>
-            <th className="ingredients-th hidden">Ingredients</th>
-            <th className="preparation-th hidden">Preparation</th>
-            <th className="hidden">Actions</th>
-        </thead>
-*/
+
 /* The "styleBackground" ''function' is 'called' with the "areThereOddNumberRecipes" 
 'parameter/variable' as an 'argument'. */
 styleBackground(areThereOddNumberRecipes)
