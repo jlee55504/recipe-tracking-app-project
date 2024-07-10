@@ -51,8 +51,8 @@ img {
  Chegg Skill's webpage. */
 td {
   letter-spacing: 1px;
-  overflow-x:hidden;
   overflow-y:hidden;
+  overflow-x: hidden;
   font-size: 12px;
   padding: 10px;
   text-align: -webkit-center;
@@ -82,3 +82,16 @@ table {
 }
 
 /* Column size for tbody */
+
+.ingredients-div, .preparation-div {
+  overflow-y: auto;
+  width: 28.1rem;
+  height: 4rem;
+}
+td:has(.ingredients-div), td:has(.preparation-div) {
+  overflow-x: unset;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff0c7;
+}
