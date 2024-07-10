@@ -1,5 +1,13 @@
 Completed Chegg Skill's "_Recipe-tracking app project_" "_Qualified_" assessment.
 
+![Alt text](https://github.com/jlee55504/recipe-tracking-app-project/blob/main/img/recipe-tracking-app-project%20image.png?raw=true "recipe tracking app project screenshot")
+
+Built with:
+  * React.js
+  * HTML5
+  * CSS3
+  * Testing done with Jest
+
 Overview:
 The project displays food recipes which includes the name of the dish, its type of cuisine, a URL link to a photo of the food, the ingredients used to make the meal, preparation instructions, and a "Delete" 'button' which will delete the selected recipe. Users are allowed to create their own dishes and add them to the app with the "Create" 'button'.
 
