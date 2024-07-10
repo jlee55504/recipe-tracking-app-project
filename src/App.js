@@ -19,6 +19,11 @@ returns a 'div' JSX 'element', a 'h1' JSX 'element', a 'header' JSX 'element',
 (the total number of items in the "recipes" 'variable/array') is odd or even 
 and 'sets' the 'value' for the "areThereOddNumberRecipes" 'variable'.*/
 function App() {
+  /* The "recipes" 'variable' and "setRecipes" 'function' are declared using the
+  'useState' 'method'. The "RecipeData" 'function/component' is 'passed' as an
+  argument. This holds and updates all the 'recipes'. */  
+  const [ recipes, setRecipes ] = useState( RecipeData );
+
   /* The "areThereOddNumberRecipes" 'variable' is declared and used to tell if 
   there are an odd number of items in the "recipes" 'variable/array'. */
   let areThereOddNumberRecipes;
@@ -30,11 +35,6 @@ function App() {
     if ( recipes.length % 2 !== 0 ) areThereOddNumberRecipes = true;
     else if ( recipes.length % 2 === 0 ) areThereOddNumberRecipes = false;
   }
-
-  /* The "recipes" 'variable' and "setRecipes" 'function' are declared using the
-  'useState' 'method'. The "RecipeData" 'function/component' is 'passed' as an
-  argument. This holds and updates all the 'recipes'. */  
-  const [ recipes, setRecipes ] = useState( RecipeData );
 
   // TODO: Add the ability for the <RecipeList /> component to list and delete an existing recipe.
   // TODO: Add the ability for the <RecipeCreate /> component to create new recipes.
@@ -56,6 +56,7 @@ function App() {
     const updatedRecipeList = recipes.filter( ( recipe, index ) => recipes[ index ] !== recipes[ indexToDelete ] );
     setRecipes( updatedRecipeList );
   }
+  
   /* The "checkIfRecipesAreOdd" 'function' is 'called' with the "recipes" 'variable/array'. */
   checkIfRecipesAreOdd( recipes );
      

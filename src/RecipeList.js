@@ -14,7 +14,7 @@ the "recipes" 'variable/array'. Also inside is the "createRecipeTableData"
 "recipes" 'variable/array'. A 'div' JSX 'element' is returned with a 'table', 
 a 'thead', a 'tr' and a 'tbody' JSX 'element(s)' with all the 'data' from the 
 "createRecipeTableData" 'variable' inside of the 'tbody' JSX 'element'. */
-function RecipeList({ recipes, deleteRecipe }) {
+function RecipeList( { recipes, deleteRecipe } ) {
   
   // TODO: Display the list of recipes using the structure of table that is provided.
   // TODO: Create at least one additional component that is used by this component.
@@ -47,8 +47,28 @@ function RecipeList({ recipes, deleteRecipe }) {
   for its 'text'. The fifth 'div' JSX 'element' inside of the fifth 'td' JSX 
   'element' contains the 'value' of the current item's "preparation" 'key' for
   its 'text'. */
-  const createRecipeTableData = recipes.map( ( recipe, index ) => <tr key={ index }><td><div>{ recipe.name }</div></td><td><div>{ recipe.cuisine }</div></td><td><img src={ recipe.photo } alt={ recipe.name } /></td>
-    <td><div className="ingredients-div">{ recipe.ingredients }</div></td><td><div className="preparation-div">{ recipe.preparation }</div></td><td><button type="button" name="delete" onClick={ getIndexToDelete } value={ index }>Delete</button></td> </tr>);
+  const createRecipeTableData = recipes.map( ( recipe, index ) => 
+    <tr key={ index }>
+      <td>
+        <div>{ recipe.name }</div>
+      </td>
+      <td>
+        <div>{ recipe.cuisine }</div>
+      </td>
+      <td>
+        <img src={ recipe.photo } alt={ recipe.name } />
+      </td>
+      <td>
+        <div className="ingredients-div">{ recipe.ingredients }</div>
+      </td>
+      <td>
+        <div className="preparation-div">{ recipe.preparation }</div>
+      </td>
+      <td>
+        <button type="button" name="delete" onClick={ getIndexToDelete } 
+        value={ index }>Delete</button>
+      </td>
+    </tr>);
 
   /* A 'div' JSX 'element' with the 'value' of "recipe-list" for its 'className' 
   'attribute' with a 'table' JSX 'element' with one 'tr' inside containing six

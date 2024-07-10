@@ -5,7 +5,7 @@ import './RecipeCreate.css';
 
 /* The "RecipeCreate" 'function/component' takes two 'parameters'; "getRecipes" 
 (a 'function') and "areThereOddNumberRecipes" (a 'variable' containing a 'boolean'
-'value'), returns six 'td' JSX 'elements' inside a 'tr' JSX 'element' inside a 
+'value') and returns six 'td' JSX 'elements' inside a 'tr' JSX 'element' inside a 
 'tbody' JSX 'element' inside a 'table' JSX 'element' inside a 'form' JSX 'element'.
 Inside the 'td' JSX 'elements' are various 'fields' for 'data'. Based on the 'data'
 inputted, The "handleChange" 'function' 'calls' the "setFormData" and 'updates' the
@@ -16,7 +16,7 @@ the "handleSubmit" 'function' 'calls' the "setFormData" 'function' using the
 the "formData" as its 'argument'. The "styleBackground" 'function' 'sets' the "styling" 
 'variable's' 'value' depending on the "areThereOddNumberRecipes" 'parameter/variable'
 'value'. */
-function RecipeCreate({ getRecipes, areThereOddNumberRecipes }) {
+function RecipeCreate( { getRecipes, areThereOddNumberRecipes } ) {
 
   // TODO: When the form is submitted, a new recipe should be created, and the form contents cleared.
   // TODO: Add the required input and textarea form elements.
@@ -36,7 +36,7 @@ function RecipeCreate({ getRecipes, areThereOddNumberRecipes }) {
   /* The "formData" 'variable' and the "setFormData" 'function' are 'declared' 
   using the 'useState' 'method' with the "initialFormState" passed as an 
   'argument' using the 'spread operator'. */
-  const [formData, setFormData] = useState({ ...initialFormState });
+  const [ formData, setFormData ] = useState( { ...initialFormState } );
 
   /* The "handleChange" 'function' takes one 'parameter'; "target" inside of 
   'curly brackets' ({}). The "name" 'variable' holds the value of the "target"
@@ -45,12 +45,12 @@ function RecipeCreate({ getRecipes, areThereOddNumberRecipes }) {
   passed in the "formData" 'variable' using the 'rest parameter' followed
   by a new property with the value of the "name" 'variable' as its 'key' and 
   the "value" 'variable' for its 'value'. */
-  const handleChange = ({ target }) => {
+  const handleChange = ( { target } ) => {
     const name = target.name;
     const value = target.value;
     setFormData( {
       ...formData,
-      [name]: value,
+      [ name ]: value,
     } );
   }
   /* The "handleSubmit" 'function' takes one 'parameter' named "event". The 
@@ -82,6 +82,11 @@ function RecipeCreate({ getRecipes, areThereOddNumberRecipes }) {
         }
       }     
   }
+
+  /* The "styleBackground" ''function' is 'called' with the "areThereOddNumberRecipes" 
+  'parameter/variable' as an 'argument'. */
+  styleBackground( areThereOddNumberRecipes );
+  
 
   /* A 'form' JSX 'element' with a 'value' of "create" for its 'name' attribute 
   and the "handleSubmit" 'function' for its 'onSubmit' 'event listener' is 
@@ -132,17 +137,11 @@ function RecipeCreate({ getRecipes, areThereOddNumberRecipes }) {
   'onChange' 'event listener'. The final 'td' JSX 'element' contains a 
   'button' JSX 'element' with "submit" as the 'value' for its 'role' 
   'attribute' and the 'value' "Create" for its 'text'. */
-        
-
-  /* The "styleBackground" ''function' is 'called' with the "areThereOddNumberRecipes" 
-  'parameter/variable' as an 'argument'. */
-  styleBackground( areThereOddNumberRecipes );
-
   return (
-    <form name="create" onSubmit={ handleSubmit }>
+    <form name="create" onSubmit={ handleSubmit } >
       <table> 
         <tbody>
-          <tr style={ styling }>
+          <tr style={ styling } >
             <td className="name-td">
               <label htmlFor="name">
                 <input type="text" id="name" name="name" placeholder="Name" 
@@ -160,13 +159,15 @@ function RecipeCreate({ getRecipes, areThereOddNumberRecipes }) {
             <td className="photo-td">
               <label htmlFor="photo">
                 <input type="url" id="photo" name="photo" placeholder="URL" 
-                required={ true } value={ formData.photo } onChange={ handleChange } />
+                required={ true } value={ formData.photo } 
+                onChange={ handleChange } />
               </label>
             </td>
             <td className="ingredients-td">
               <label htmlFor="ingredients">
                 <textarea id="ingredients" name="ingredients" placeholder="Ingredients" 
-                required={ true } cols={ 30 } rows={ 2 } value={ formData.ingredients } 
+                required={ true } cols={ 30 } rows={ 2 } 
+                value={ formData.ingredients } 
                 onChange={ handleChange } />
               </label>
             </td>
