@@ -1,4 +1,4 @@
-# Recipe-tracking app project
+# Recipe-Tracking App Project
 
 Completed Chegg Skill's "_Recipe-tracking app project_" "_Qualified_" assessment.
 
