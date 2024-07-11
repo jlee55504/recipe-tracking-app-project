@@ -11,7 +11,7 @@ The project displays food recipes which includes the name of the dish, its type 
   * React.js
   * HTML5
   * CSS3
-  * Testing done with Jest
+  * Jest used for testing
 
 ## App.js
 The "App" 'function/component' holds the "recipes" 'variable' and "setRecipes" 
