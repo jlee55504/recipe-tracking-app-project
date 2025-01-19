@@ -1,6 +1,6 @@
 # Recipe-Tracking App Project
 
-An application that lists information for food recipes with the ability to add new recipes or delete dishes.
+An application that lists information for food recipes with the ability to add new recipes or delete recipes.
 
 ## Features
 
