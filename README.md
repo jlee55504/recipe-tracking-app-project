@@ -4,7 +4,7 @@ An application that lists information for food recipes with the ability to add n
 
 ## Features
 
-  - **Food Recipe Management:** Adds, lists, updates, and deletes food recipe information.
+  - **Food Recipe Management:** Adds, lists, and deletes food recipe information.
   - **User-friendly Interface:** Simple structured layout for easy navigation.
 
 ## Technologies Used
