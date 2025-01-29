@@ -11,7 +11,7 @@ An application that lists information for food recipes with the ability to add n
 
   * **React.js:** Core programming language (React 18.2.0)
   * **HTML:** Visually displays the content of the application
-  * **CSS:** Provides visual styling for the application
+  * **CSS:** Provides visual styling of the application
   * **Jest:** Unit testing framework
 
 ## Screenshot
@@ -60,8 +60,10 @@ To delete a recipe, click "Delete".
   - ``src/RecipeCreate.js:`` Handles creating new food recipes
   - ``src/RecipeData.js:`` Holds all the food recipe data
   - ``src/RecipeList.js:`` Lists all the food recipes
-  - ``src/App.css:`` Handles the visual styling for the application
+  - ``src/App.css:`` Handles the visual styling of the application
   - ``src/RecipeCreate.css:`` Handles the input size styling for new food recipes
+  - ``img/:`` Contains the screenshot of the application
+
 
 ## Acknowledgments
 
